@@ -1,5 +1,6 @@
-FROM ubuntu:18.04
-
+FROM python:3.6
 EXPOSE 34251
-
-CMD ["python3", "webui.py"]
+ADD . /root/psite
+WORKDIR /root/psite
+RUN pip install -r requirements.txt
+CMD ["python", "webui.py"]
